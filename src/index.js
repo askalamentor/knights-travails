@@ -1,9 +1,4 @@
-class Node {
-  constructor(x = null, y = null) {
-    this.x = x;
-    this.y = y;
-  }
-}
+import Node from './node';
 
 const cells = [];
 
