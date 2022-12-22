@@ -54,9 +54,11 @@ function knightMove(pos) {
   return KNIGHTMOVESET.map((move) => [
     pos[0] + move[0],
     pos[1] + move[1],
-  ]).filter((move) => move[0] >= 0 && move[1] >= 0);
+  ]).filter(
+    (move) => move[0] >= 0 && move[0] < 8 && move[1] >= 0 && move[1] < 8
+  );
 }
 
 const arr = knightMove([1, 4]);
 console.log(arr);
-findKnightPath([2, 1], [6, 4]);
+findKnightPath([0, 0], [8, 0]);
