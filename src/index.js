@@ -1,17 +1,24 @@
-import Node from './node';
-import Tree from './tree';
+import Cell from './node';
 
-const cells = [];
+let queue = [];
 
-for (let i = 0; i < 8; i++) {
-  for (let j = 0; j < 8; j++) {
-    cells.push([i, j]);
-  }
+const KNIGHTMOVESET = [
+  [1, 2],
+  [1, -2],
+  [-1, 2],
+  [-1, -2],
+  [2, 1],
+  [2, -1],
+  [-2, 1],
+  [-2, -1],
+];
+
+function knightMove(pos) {
+  return KNIGHTMOVESET.map((move) => [
+    pos[0] + move[0],
+    pos[1] + move[1],
+  ]).filter((move) => move[0] >= 0 && move[1] >= 0);
 }
 
-console.log(cells);
-
-const tree = new Tree(cells);
-console.log(tree);
-tree.prettyPrint(tree.root);
-tree.printPathBetweenNodes(tree.root, [0, 1], [5, 2]);
+const arr = knightMove([1, 4]);
+console.log(arr);
